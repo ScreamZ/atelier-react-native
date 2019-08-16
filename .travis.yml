@@ -14,11 +14,20 @@ cache:
     - ~/.npm
     - .jest
 
+stages:
+  - test
+  - publish
+
 before_script:
   - npm install -g expo-cli
   - yarn install
 
-script:
-  - yarn test --ci
-  - expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD
-  - expo publish --non-interactive
+jobs:
+  include:
+    - stage: test
+      script:
+        - yarn test --ci
+    - stage: publish
+      script:
+        - expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD
+        - expo publish --non-interactive
