@@ -1,9 +1,9 @@
 import React from 'react'
-import { LoginScreen } from '../src/screens/guest/Login'
+import { HomeScreen } from '../Home'
 
 import renderer from 'react-test-renderer'
 
 test('Is home rendered correctly', () => {
-  const tree = renderer.create(<LoginScreen />).toJSON()
+  const tree = renderer.create(<HomeScreen />).toJSON()
   expect(tree).toMatchSnapshot()
 });
