@@ -15,8 +15,13 @@ cache:
     - .jest
 
 stages:
-  - test
-  - publish
+  - name: test
+  - name: publish
+    # require the branch name to be uat (note for PRs this is the base branch name)
+    if: branch = uat
+  - name: deploy
+    # require the branch name to be master (note for PRs this is the base branch name)
+    if: branch = master
 
 before_script:
   - npm install -g expo-cli
@@ -30,4 +35,10 @@ jobs:
     - stage: publish
       script:
         - expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD
-        - expo publish --non-interactive
+        - expo publish --non-interactive --release-channel $TRAVIS_COMMIT
+    - stage: deploy
+      before_script:
+        - npm install -g expo-cli
+      script:
+        - expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD
+        - expo build:android
