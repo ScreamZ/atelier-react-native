@@ -11,6 +11,7 @@ branches:
 cache:
   yarn: true
   directories:
+    - ~/.npm
     - .jest
 
 before_script:
@@ -18,3 +19,5 @@ before_script:
 
 script:
   - yarn test --ci
+  - npx expo login -u $EXPO_CLI_USERNAME -p $EXPO_CLI_PASSWORD
+  - npx expo publish --non-interactive
