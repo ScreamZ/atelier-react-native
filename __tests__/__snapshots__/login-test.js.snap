@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Is home rendered correctly 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <Text>
+    Hello login
+  </Text>
+</RCTSafeAreaView>
+`;
