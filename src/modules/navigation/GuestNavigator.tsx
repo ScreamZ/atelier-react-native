@@ -1,11 +1,9 @@
 import { createStackNavigator } from "react-navigation";
-import { Screens } from "./types";
-import { HomeScreen, LoginScreen } from "../../screens/guest";
+import { AppScreens } from "./types";
+import HomeScreen from "../../screens/guest/Home";
+import LoginScreen from "../../screens/guest/Login";
 
-export default createStackNavigator(
-  {
-    [Screens.GuestHome]: HomeScreen,
-    [Screens.GuestLogin]: LoginScreen
-  }
-  // { headerMode: "none" } // TODO:
-);
+export default createStackNavigator({
+  [AppScreens.GuestHome]: HomeScreen,
+  [AppScreens.GuestLogin]: LoginScreen
+});

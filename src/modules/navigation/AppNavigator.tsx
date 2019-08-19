@@ -1,9 +1,11 @@
-import React from "react";
 import { createAppContainer, createSwitchNavigator, createMaterialTopTabNavigator } from "react-navigation";
-import { Text } from "react-native";
 import { useScreens } from "react-native-screens";
-import { Screens } from "./types";
+import { AppScreens } from "./types";
+
 import GuestNavigator from "./GuestNavigator";
+import GroupNavigator from "./GroupNavigator";
+
+import InitializationScreen from "../../screens/Initialization";
 
 // https://reactnavigation.org/docs/en/react-native-screens.html#setup-when-you-are-using-expo
 useScreens();
@@ -11,10 +13,12 @@ useScreens();
 export default createAppContainer(
   createSwitchNavigator(
     {
-      [Screens.GuestHome]: GuestNavigator
+      Init: InitializationScreen,
+      [AppScreens.GuestHome]: GuestNavigator,
+      [AppScreens.GroupHome]: GroupNavigator
     },
     {
-      initialRouteName: Screens.GuestHome
+      initialRouteName: "Init"
     }
   )
 );

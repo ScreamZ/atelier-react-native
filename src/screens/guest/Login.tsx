@@ -1,10 +1,13 @@
 import React from "react";
 import { Text, SafeAreaView } from "react-native";
+import { NavigationScreenComponent } from "react-navigation";
 
-export const LoginScreen = props => {
+const LoginScreen: NavigationScreenComponent = () => {
   return (
     <SafeAreaView>
       <Text>Hello login</Text>
     </SafeAreaView>
   );
 };
+
+export default LoginScreen;

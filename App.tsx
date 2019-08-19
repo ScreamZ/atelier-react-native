@@ -1,19 +1,15 @@
 import React from "react";
-import { StyleSheet, View } from "react-native";
-import Constants from "expo-constants";
+import { View } from "react-native";
 import AppNavigator from "./src/modules/navigation/AppNavigator";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./src/modules/ui/theme";
+
+import "./src/modules/i18n";
 
 export default function App() {
   return (
-    <View style={{ flex: 1 }}>
-      <View style={styles.statusBar} />
+    <ThemeProvider theme={theme}>
       <AppNavigator />
-    </View>
+    </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  statusBar: {
-    height: Constants.statusBarHeight // TODO: Move this to specific screen where we wants not a full screen
-  }
-});
