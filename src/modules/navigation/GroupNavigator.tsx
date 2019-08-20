@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button, Text } from "react-native";
-import { material } from "react-native-typography";
+import { material, systemWeights } from "react-native-typography";
 import { createMaterialTopTabNavigator, NavigationComponent, NavigationParams } from "react-navigation";
 import MembersScreen from "../../screens/group/Members";
 import RecentsScreen from "../../screens/group/Recents";
@@ -23,8 +23,11 @@ const GroupNavigator = createMaterialTopTabNavigator(
         backgroundColor: theme.colors.mainPurple,
         height: 3,
       },
-      labelStyle: material.body2,
-
+      labelStyle: {
+        ...material.body2Object,
+        ...systemWeights.bold,
+        color: theme.colors.darkBlue,
+      },
       style: {
         backgroundColor: "white",
       },

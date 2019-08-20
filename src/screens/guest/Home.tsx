@@ -5,6 +5,7 @@ import styled from "styled-components/native";
 import { AppScreens } from "../../modules/navigation/types";
 import SafeArea from "../../modules/ui/components/SafeArea";
 import * as Text from "../../modules/ui/components/Texts";
+
 const HomeScreen: NavigationScreenComponent = (props) => {
   return (
     <SafeArea>
