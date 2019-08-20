@@ -22,6 +22,9 @@ jobs:
         - yarn install
       script:
         - yarn test --ci
+      before_install:
+        - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version $YARN_VERSION
+        - export PATH="$HOME/.yarn/bin:$PATH"
     - stage: publish app
       env:
         - CACHE_NAME=publish YARN_CACHE_FOLDER="/home/travis/yarn_cache"
