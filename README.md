@@ -6,6 +6,12 @@
 - **Expo app.** — Available on Google Play or Apple App Store
 - **Yarn.** — `npm i -g yarn` or get it at https://yarnpkg.com/en/
 
+**Recommended IDE**
+
+VSCode with plugins :
+
+- Prettier (also configure "editor.formatOnSave": true in config)
+
 ## Install and boot
 
 Simply run `yarn` inside the root folder.
@@ -16,3 +22,7 @@ You can also run on emulators on the machine using `yarn run android` or `yarn r
 You'll need to be on the same network as the device if using LAN / Local mode (see in the webpage).
 
 **Enjoy programming**
+
+## On git commit
+
+[Husky](https://www.npmjs.com/package/husky) will be responsible to launch some linting tests and typescripts check before commit on staged files.
