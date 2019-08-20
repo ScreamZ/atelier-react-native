@@ -15,6 +15,9 @@ env:
 
 jobs:
   include:
+    - stage: test
+      script:
+        - yarn test --ci
     - stage: publish app
       env:
         - CACHE_NAME=publish YARN_CACHE_FOLDER="/home/travis/yarn_cache"
