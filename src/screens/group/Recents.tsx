@@ -1,7 +1,7 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Text } from "react-native";
 import { NavigationScreenComponent, NavigationTabScreenOptions } from "react-navigation";
-import { useTranslation } from "react-i18next";
 
 const RecentsScreen: NavigationScreenComponent<{}, NavigationTabScreenOptions> = () => {
   const { t } = useTranslation();
@@ -9,8 +9,8 @@ const RecentsScreen: NavigationScreenComponent<{}, NavigationTabScreenOptions> =
   return <Text>Page {t("group.recent")}</Text>;
 };
 
-RecentsScreen.navigationOptions = props => ({
-  title: props.screenProps.t("group.recent")
+RecentsScreen.navigationOptions = (props) => ({
+  title: props.screenProps.t("group.recent"),
 });
 
 export default RecentsScreen;

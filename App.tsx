@@ -1,7 +1,6 @@
 import React from "react";
-import { View } from "react-native";
-import AppNavigator from "./src/modules/navigation/AppNavigator";
 import { ThemeProvider } from "styled-components";
+import AppNavigator from "./src/modules/navigation/AppNavigator";
 import { theme } from "./src/modules/ui/theme";
 
 import "./src/modules/i18n";

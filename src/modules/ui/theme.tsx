@@ -7,6 +7,7 @@ declare module "styled-components" {
   export interface DefaultTheme {
     colors: {
       blue: string;
+      mainPurple: string;
     };
     font: {
       sansSerif: string;
@@ -16,9 +17,10 @@ declare module "styled-components" {
 // Export theme implementing interface
 export const theme: DefaultTheme = {
   colors: {
-    blue: "blue"
+    blue: "blue",
+    mainPurple: "rgb(180, 9, 196)",
   },
   font: {
-    sansSerif: "'roboto', sans-serif"
-  }
+    sansSerif: "'roboto', sans-serif",
+  },
 };

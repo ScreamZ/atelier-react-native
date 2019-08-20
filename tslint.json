@@ -1,0 +1,21 @@
+{
+  "defaultSeverity": "error",
+  "extends": ["tslint:recommended", "tslint-react-hooks"],
+  "jsRules": {},
+  "rules": {
+    "max-line-length": [true, 140],
+    "interface-name": false,
+    "member-access": [true, "no-public"],
+    "no-console": {
+      "severity": "warning"
+    },
+    "variable-name": {
+      "options": ["check-format", "allow-leading-underscore", "allow-pascal-case"]
+    },
+    "react-hooks-nesting": "error"
+  },
+  "rulesDirectory": [],
+  "linterOptions": {
+    "exclude": ["**/*.js", ".expo/**/*", ".expo-shared/**/*", "node_modules/**/*"]
+  }
+}

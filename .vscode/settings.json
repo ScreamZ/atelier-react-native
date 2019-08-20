@@ -1,0 +1,5 @@
+{
+  "prettier.tslintIntegration": true,
+  "prettier.printWidth": 140,
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

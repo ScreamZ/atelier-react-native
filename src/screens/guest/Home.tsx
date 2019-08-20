@@ -1,16 +1,14 @@
 import React from "react";
-import { Text } from "react-native";
-import styled from "styled-components/native";
-import Constants from "expo-constants";
 import { Button } from "react-native";
 import { NavigationScreenComponent } from "react-navigation";
+import styled from "styled-components/native";
 import { AppScreens } from "../../modules/navigation/types";
 import SafeArea from "../../modules/ui/components/SafeArea";
-
-const HomeScreen: NavigationScreenComponent = props => {
+import * as Text from "../../modules/ui/components/Texts";
+const HomeScreen: NavigationScreenComponent = (props) => {
   return (
     <SafeArea>
-      <Text>HomeScreen just to show</Text>
+      <Text.Title>HomeScreen just to show</Text.Title>
       <Button onPress={() => props.navigation.navigate(AppScreens.GuestLogin)} title="Go to login" />
       <Spacer />
       <Button
@@ -22,12 +20,8 @@ const HomeScreen: NavigationScreenComponent = props => {
 };
 
 HomeScreen.navigationOptions = {
-  header: null
+  header: null,
 };
-
-const StatusBarHeight = styled.View`
-  height: ${Constants.statusBarHeight};
-`;
 
 const Spacer = styled.View`
   height: 10;
