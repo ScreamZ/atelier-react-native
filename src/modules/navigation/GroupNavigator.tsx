@@ -1,8 +1,9 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Button, Text } from "react-native";
+import { Text } from "react-native";
 import { material, systemWeights } from "react-native-typography";
 import { createMaterialTopTabNavigator, NavigationComponent, NavigationParams } from "react-navigation";
+import styled from "styled-components/native";
 import MembersScreen from "../../screens/group/Members";
 import RecentsScreen from "../../screens/group/Recents";
 import TopsScreen from "../../screens/group/Tops";
@@ -40,16 +41,20 @@ const GroupNavigatorContainer: NavigationComponent = (props: NavigationParams) =
 
   return (
     <SafeArea>
-      <Button
-        onPress={() => props.navigation.navigate(AppScreens.GuestHome)}
-        title="Go to guest home (like a disconnect, but you probably have to clear some vars too"
-      />
-      <Text>Imaginons que c'est le composant avec "Le wagon", la search et la tête du gars</Text>
+      <TopWrapper>
+        <Text>Ici il a y avoir une barre de rechercher et un bouton avec une loupe par exemple</Text>
+      </TopWrapper>
       <GroupNavigator navigation={props.navigation} screenProps={{ t }} />
     </SafeArea>
   );
 };
 
 GroupNavigatorContainer.router = GroupNavigator.router;
+
+const TopWrapper = styled.View`
+  width: 40px;
+  background: red;
+  width: 100%;
+`;
 
 export default GroupNavigatorContainer;

@@ -5,10 +5,12 @@ import { theme } from "./src/modules/ui/theme";
 
 import "./src/modules/i18n";
 
-export default function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <AppNavigator />
-    </ThemeProvider>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <ThemeProvider theme={theme}>
+        <AppNavigator />
+      </ThemeProvider>
+    );
+  }
 }

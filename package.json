@@ -9,6 +9,7 @@
   "dependencies": {
     "expo": "^34.0.1",
     "expo-localization": "~6.0.0",
+    "formik": "^1.5.8",
     "i18next": "^17.0.11",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
@@ -27,7 +28,6 @@
     "@types/react-native": "^0.57.65",
     "@types/styled-components": "^4.1.18",
     "babel-preset-expo": "^6.0.0",
-    "husky": "^3.0.4",
     "jest": "^24.9.0",
     "jest-expo": "^34.0.0",
     "lint-staged": "^9.2.3",
